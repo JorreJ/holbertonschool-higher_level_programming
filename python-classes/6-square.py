@@ -56,8 +56,8 @@ class Square:
             The size and position attributes are private and should be accessed
             through their respective getter and setter methods.
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -70,7 +70,7 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, size):
+    def size(self, value):
         """
         Setter method for updating the size of the square.
 
@@ -81,11 +81,11 @@ class Square:
             TypeError: If size is not an integer.
             ValueError: If size is negative.
         """
-        if type(size) is not int:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        if size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
+        self.__size = value
 
     @property
     def position(self):
@@ -111,7 +111,8 @@ class Square:
                     exactly two positive integers.
         """
         if (not isinstance(value, tuple) or len(value) != 2 or
-                not all(isinstance(i, int) and i >= 0 for i in value)):
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
