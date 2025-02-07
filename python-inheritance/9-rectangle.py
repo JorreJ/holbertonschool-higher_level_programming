@@ -59,4 +59,4 @@ class Rectangle(BaseGeometry):
         Returns:
             str: A formatted string in the format `[Rectangle] width/height`.
         """
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        return f"[{type(self).__name__}] {self.__width}/{self.__height}"
