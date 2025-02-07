@@ -1,49 +1,10 @@
 #!/usr/bin/python3
 """
-This module defines the `BaseGeometry` and `Rectangle` classes.
+This module defines the `Rectangle` class, which inherits from `BaseGeometry`.
 """
 
-
-class BaseGeometry:
-    """
-    A class representing geometric shapes.
-
-    Methods:
-        area(self):
-            Raises an Exception indicating that the method
-            is not yet implemented.
-
-        integer_validator(self, name, value):
-            Validates that a given value is a positive integer.
-    """
-
-    def area(self):
-        """
-        Raises an Exception to indicate that the area() method
-        must be implemented by subclasses.
-
-        Raises:
-            Exception: Always raises an error since the method
-            is not implemented.
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """
-        Validates that `value` is a positive integer.
-
-        Args:
-            name (str): The name of the parameter (used in the error message).
-            value (int): The value to validate.
-
-        Raises:
-            TypeError: If `value` is not an integer.
-            ValueError: If `value` is not greater than 0.
-        """
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+# Importing BaseGeometry from another module
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -51,8 +12,8 @@ class Rectangle(BaseGeometry):
     A class that represents a rectangle, inheriting from BaseGeometry.
 
     Attributes:
-        __width (int): The width of the rectangle.
-        __height (int): The height of the rectangle.
+        __width (int): The width of the rectangle (private attribute).
+        __height (int): The height of the rectangle (private attribute).
 
     Methods:
         __init__(self, width, height):
