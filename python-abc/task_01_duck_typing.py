@@ -27,7 +27,7 @@ class Rectangle(Shape):
 class Circle(Shape):
 
     def __init__(self, radius):
-        self.__radius = radius
+        self.__radius = abs(radius)
 
     def area(self):
         return pi * (self.__radius ** 2)
