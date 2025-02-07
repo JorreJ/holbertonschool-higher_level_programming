@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module defines the `BaseGeometry` and `Rectangle` classes.
+"""
+
 
 class BaseGeometry:
     """
@@ -17,6 +21,10 @@ class BaseGeometry:
         """
         Raises an Exception to indicate that the area() method
         must be implemented by subclasses.
+
+        Raises:
+            Exception: Always raises an error since the method
+            is not implemented.
         """
         raise Exception("area() is not implemented")
 
@@ -38,15 +46,19 @@ class BaseGeometry:
             raise ValueError(f"{name} must be greater than 0")
 
 
-"""
-This module defines a Rectangle class that inherits from BaseGeometry.
-"""
-
-
 class Rectangle(BaseGeometry):
     """
     A class that represents a rectangle, inheriting from BaseGeometry.
+
+    Attributes:
+        __width (int): The width of the rectangle.
+        __height (int): The height of the rectangle.
+
+    Methods:
+        __init__(self, width, height):
+            Initializes a rectangle with validated width and height.
     """
+
     def __init__(self, width, height):
         """
         Initializes the Rectangle with width and height.
@@ -54,6 +66,10 @@ class Rectangle(BaseGeometry):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
+
+        Raises:
+            TypeError: If `width` or `height` is not an integer.
+            ValueError: If `width` or `height` is not greater than 0.
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
