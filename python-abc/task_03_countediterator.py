@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 class CountedIterator:
-    def __init__(self, some_iterable):
-        self.iterator = iter(some_iterable)
+    def __init__(self, iterable):
+        self.iterator = iter(iterable)
         self.count = 0
 
     def __iter__(self):
