@@ -4,6 +4,7 @@ This module defines a `Student` class with attributes and a method
 to convert its instances into a dictionary representation.
 """
 
+
 class Student:
     """
     A class representing a student with basic attributes.
