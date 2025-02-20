@@ -1,4 +1,6 @@
-import requests, json, csv
+import requests
+import csv
+
 
 def fetch_and_print_posts():
     post = requests.get('https://jsonplaceholder.typicode.com/posts')
@@ -7,6 +9,7 @@ def fetch_and_print_posts():
         post_list = post.json()
         for x in post_list:
             print(x['title'])
+
 
 def fetch_and_save_posts():
     post = requests.get('https://jsonplaceholder.typicode.com/posts')
@@ -17,4 +20,6 @@ def fetch_and_save_posts():
             w = csv.DictWriter(f, fieldnames=my_keys)
             w.writeheader()
             for x in post_list:
-                w.writerow({'id': x['id'], 'title': x['title'], 'body': x['body']})
+                w.writerow({'id': x['id'],
+                            'title': x['title'],
+                            'body': x['body']})
