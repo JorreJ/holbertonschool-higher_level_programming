@@ -18,6 +18,8 @@ def fetch_and_print_posts():
         post_list = post.json()
         for x in post_list:
             print(x['title'])
+    else:
+        print("Failed to fetch posts")
 
 
 def fetch_and_save_posts():
@@ -45,3 +47,6 @@ def fetch_and_save_posts():
                 w.writerow({'id': x['id'],
                             'title': x['title'],
                             'body': x['body']})
+            print("Posts saved in saved_posts")
+    else:
+        print("Failed to fetch posts")
