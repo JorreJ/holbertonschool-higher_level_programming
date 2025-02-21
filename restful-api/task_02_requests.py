@@ -18,7 +18,7 @@ def fetch_and_print_posts():
     if post.status_code == 200:
         post_list = post.json()
         for x in post_list:
-            print(x["title"])
+            print(x['title'])
     else:
         print("Failed to fetch posts")
 
@@ -34,10 +34,9 @@ def fetch_and_save_posts():
     into a CSV file called 'saved_posts'.
     """
     post = requests.get('https://jsonplaceholder.typicode.com/posts')
-    print(f"Status Code: {post.status_code}")
     if post.status_code == 200:
         post_list = post.json()
-        with open("saved_posts", 'w', newline='', encoding='utf-8') as f:
+        with open("posts.csv", 'w', newline='', encoding='utf-8') as f:
             # Define the field names for the CSV file
             my_keys = ['id', 'title', 'body']
             # Create a CSV DictWriter object to write data in dictionary form
