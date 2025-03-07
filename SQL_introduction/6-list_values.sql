@@ -1,2 +1,2 @@
--- list all rows of a table
+-- programm to list all rows of a table
 SELECT * FROM first_table;
