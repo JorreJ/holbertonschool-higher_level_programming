@@ -19,8 +19,13 @@ if __name__ == "__main__":
     # Ouverture d'une session avec la base de données
     session = Session(engine)
 
-    # Récupére tous les états (State) de la base, triés par leur id
-    for state in session.query(State).order_by(State.id).all():
+    # Récupère le premier état (State) de la base de données, trié par son id
+    state = session.query(State).order_by(State.id).first()
+
+    # Vérifie si aucun état n'a été trouvé
+    if state is None:
+        print('Nothing')
+    else:
         print("{}: {}".format(state.id, state.name))
 
     # Fermeture de la session après la fin de l'exécution
