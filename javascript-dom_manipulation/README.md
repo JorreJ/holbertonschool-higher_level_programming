@@ -96,8 +96,8 @@ javascript-dom_manipulation/
 
 ## 👤 Author
 
-**Your Name**  
-GitHub: [@yourusername](https://github.com/yourusername)  
+**Jade Jorré**  
+GitHub: [@JorreJ](https://github.com/JorreJ)  
 Project developed as part of the Holberton School curriculum.
 
 ---
